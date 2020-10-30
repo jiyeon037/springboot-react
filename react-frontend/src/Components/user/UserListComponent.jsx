@@ -55,8 +55,8 @@ reloadUserList = () => {
         })
     }
 
-    editUser = (ID) => {
-        window.localStorage.setItem("userID", ID);
+    editUser = (userID) => {
+        window.localStorage.setItem("userID", userID);
         this.props.history.push('/edit-user');
     }
 
@@ -75,7 +75,7 @@ reloadUserList = () => {
                     <TableHead>
                         <TableRow>
                             <TableCell>ID</TableCell>
-                            <TableCell>FirstName</TableCell>
+                            <TableCell align="right">FirstName</TableCell>
                             <TableCell align="right">LastName</TableCell>
                             <TableCell align="right">UserName</TableCell>
                             <TableCell align="right">Age</TableCell>
@@ -90,7 +90,7 @@ reloadUserList = () => {
                             <TableCell component="th" scope="user">{user.id}</TableCell>
                             <TableCell align="right">{user.firstName}</TableCell>
                             <TableCell align="right">{user.lastName}</TableCell>
-                            <TableCell align="right">{user.userName}</TableCell>
+                            <TableCell align="right">{user.username}</TableCell>
                             <TableCell align="right">{user.age}</TableCell>
                             <TableCell align="right">{user.salary}</TableCell>
                             <TableCell align="right" onClick={()=> this.editUser(user.id)}>
